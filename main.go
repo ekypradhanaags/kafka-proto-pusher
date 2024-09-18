@@ -71,7 +71,7 @@ func setupProducer() (sarama.SyncProducer, error) {
 	return sarama.NewSyncProducer(kafkaBrokers, config)
 }
 
-// produceMessages will send message from file publish.json to kafka topic
+// produceMessages will send message to kafka topic with proto marshal
 func produceMessages(producer sarama.SyncProducer, signals chan os.Signal) {
 	data := events.AverageCost{
 		NetsuiteLocationId: 43,
